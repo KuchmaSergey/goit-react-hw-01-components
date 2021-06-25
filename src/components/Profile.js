@@ -1,35 +1,43 @@
-import Profile from "react";
+import React from "react";
 
 
 
-const Profile = () => (
+const Profile = ({ avatar, name, tag, location, stats }) => (
+
     <div class="profile">
         <div class="description">
             <img
-                src="https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg"
-                alt="Аватар пользователя"
-                class="avatar"
+                src={avatar}
+                alt={name}
+                width="100"
+                class={avatar}
             />
-            <p class="name">Petra Marica</p>
-            <p class="tag">@pmarica</p>
-            <p class="location">Salvador, Brasil</p>
+            <p class="name">{name }</p>
+            <p class="tag">@{tag}</p>
+            <p class="location">{location}</p>
         </div>
 
-        <ul class="stats">
+        <ul class={stats}>
             <li>
                 <span class="label">Followers</span>
-                <span class="quantity">1000</span>
+                <span class="quantity">{stats.followers}</span>
             </li>
             <li>
                 <span class="label">Views</span>
-                <span class="quantity">2000</span>
+                <span class="quantity">{stats.views}</span>
             </li>
             <li>
                 <span class="label">Likes</span>
-                <span class="quantity">3000</span>
+                <span class="quantity">{stats.likes}</span>
             </li>
         </ul>
     </div>
 );
+
+Profile.defaultProps = {
+  avatar: "http://simpleicon.com/wp-content/uploads/user1.svg",
+};
+
+
 
 export default Profile;
