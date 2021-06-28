@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./TransactionHistory.module.css";
+
 
 const TransactionHistory = ({ items }) => (
-  <div style={{ padding: "30px 10px" }} className="container">
-    <table className={styles.transaction_history}>
-      <thead className={styles.title}>
+  <div  className="container">
+    <table className="">
+      <thead className="">
         <tr>
-          <th className={styles.item}>Type</th>
-          <th className={styles.item}>Amount</th>
-          <th className={styles.item}>Currency</th>
+          <th className="">Type</th>
+          <th className="">Amount</th>
+          <th className="">Currency</th>
         </tr>
       </thead>
 
@@ -25,6 +25,7 @@ const TransactionHistory = ({ items }) => (
     </table>
   </div>
 );
+
 
 TransactionHistory.propTypes = {
   items: PropTypes.array.isRequired,
